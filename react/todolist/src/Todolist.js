@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todoitem from './Todoitem';
+import './style.css';
 
 class Todolist extends Component {
   constructor(props){
@@ -24,7 +25,7 @@ class Todolist extends Component {
     this.setState({
       inputValue: e.target.value,
     });
-  }
+  }  
 
   handleDelete(index) {
     const list = [...this.state.list];
@@ -53,7 +54,7 @@ class Todolist extends Component {
       <div>
         <div>
           <input type="text" value={this.state.inputValue} onChange={this.handleInputChange}/>
-          <button onClick={this.handleBtnClick}>add</button>
+          <button className="red-btn" onClick={this.handleBtnClick}>add</button>
         </div>
         <ul>{this.getTodoItem()}</ul>
       </div>
